@@ -79,18 +79,21 @@ public class FrmMain extends javax.swing.JFrame {
         jLayeredPane1.add(jScrollPane1);
 
         txtWarehouse.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtWarehouse.setText("AddWarehouse");
         txtWarehouse.setPreferredSize(new java.awt.Dimension(100, 28));
+        txtWarehouse.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtWarehouseKeyTyped(evt);
+            }
+        });
 
         btnWarehouse.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         btnWarehouse.setText("Add Warehouse");
 
         txtClient.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtClient.setText("AddClient");
         txtClient.setPreferredSize(new java.awt.Dimension(100, 28));
-        txtClient.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtClientActionPerformed(evt);
+        txtClient.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtClientKeyTyped(evt);
             }
         });
 
@@ -99,11 +102,10 @@ public class FrmMain extends javax.swing.JFrame {
         btnClient.setPreferredSize(new java.awt.Dimension(162, 34));
 
         txtPriceKM.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtPriceKM.setText("addPriceKM");
         txtPriceKM.setPreferredSize(new java.awt.Dimension(100, 28));
-        txtPriceKM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPriceKMActionPerformed(evt);
+        txtPriceKM.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPriceKMKeyTyped(evt);
             }
         });
 
@@ -240,17 +242,14 @@ public class FrmMain extends javax.swing.JFrame {
 
         txtCost.setEditable(false);
         txtCost.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtCost.setText("txtCost");
         txtCost.setPreferredSize(new java.awt.Dimension(120, 28));
 
         txtStorage.setEditable(false);
         txtStorage.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtStorage.setText("txtStorage");
         txtStorage.setPreferredSize(new java.awt.Dimension(120, 28));
 
         txtTotal.setEditable(false);
         txtTotal.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtTotal.setText("txtTotal");
         txtTotal.setPreferredSize(new java.awt.Dimension(120, 28));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -328,13 +327,26 @@ public class FrmMain extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClientActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtClientActionPerformed
+    private void txtWarehouseKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtWarehouseKeyTyped
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c)) && (int)evt.getKeyChar() != 8 && (int)evt.getKeyChar() != 27) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtWarehouseKeyTyped
 
-    private void txtPriceKMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceKMActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPriceKMActionPerformed
+    private void txtClientKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClientKeyTyped
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c)) && (int)evt.getKeyChar() != 8 && (int)evt.getKeyChar() != 27) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtClientKeyTyped
+
+    private void txtPriceKMKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKMKeyTyped
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c)) && (int)evt.getKeyChar() != 8 && (int)evt.getKeyChar() != 27) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtPriceKMKeyTyped
 
     /**
      * @param args the command line arguments
